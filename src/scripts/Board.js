@@ -28,12 +28,12 @@ export class Board {
         // for (var i = 0)
     }
 
-    draw() {
-        var canvas = document.querySelector("canvas");
-        var brush = canvas.getContext("2d");
-        brush.beginPath();
-        brush.fillRect(100, 100, 100, 100)
-    }
+    // draw() {
+    //     var canvas = document.querySelector("canvas");
+    //     var brush = canvas.getContext("2d");
+    //     brush.beginPath();
+    //     brush.fillRect(100, 100, 100, 100)
+    // }
 }
 
-export default Board;
+var board = new Board(5);
