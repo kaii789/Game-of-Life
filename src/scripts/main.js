@@ -1,4 +1,4 @@
-import Board from "./Board.js";
+import { Board } from "./Board.js";
 
 // assignments
 var canvas = document.querySelector("canvas");
