@@ -34,9 +34,14 @@ export class Board {
     
         for (var tileRow in this.tiles) {
             for (var tileColumn in this.tiles[tileRow]) {
-                tileState = this.tiles[tileRow][tileColumn];
+                var tileState = this.tiles[tileRow][tileColumn];
                 brush.beginPath();
-                brush.fillStyle = "black";
+                if (tileState == 0) {
+                    brush.fillStyle = "black";
+                } else {
+                    brush.fillStyle = "white";
+                }
+                
                 brush.fillRect(tileColumn, tileRow, this.tileSize, this.tileSize);
             }
 
