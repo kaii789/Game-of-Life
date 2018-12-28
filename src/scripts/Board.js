@@ -12,9 +12,9 @@ export class Board {
         for (var i = 0; i < rows; i++) {
             var row = new Array();
             for (var j = 0; j < columns; j++) {
-                row[j] = 0;
+                row.push(0);
             }
-            tiles[i] = temp;
+            tiles.push(temp);
         }
 
         return tiles;
