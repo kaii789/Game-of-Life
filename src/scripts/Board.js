@@ -1,8 +1,10 @@
 // constructor helper
 function _generateTiles(tileSize) {
     // based off tileSize, generate the appropriate number of tiles
+    var height = window.innerHeight;
+    var width = window.innerWidth;
     var rows = Math.floor(window.innerHeight / tileSize);
-    var columns = Math.floor(window.innerHeight / tileSize);
+    var columns = Math.floor(window.innerWidth / tileSize);
     var tiles = new Array();
     for (var i = 0; i < rows; i++) {
         var row = new Array();
@@ -25,20 +27,20 @@ export class Board {
         // for a given tile, if alive, check num of alive neighbors >> if not 2 or 3 alive neighbors, then dead in next gen
         // if dead, if 3 alive neighbors, alive in next gen
 
-        for (var tileRow in this.tiles) {
-            for (var tileColumn in this.tiles[tileRow]) {
-                var tileState = this.tiles[tileRow][tileColumn];
-                var neighbors = _getNeighbors(tileRow, tileColumn);
-                if (tileState == 0) {
-                    // tile dead
-                } else {
+        // for (var tileRow in this.tiles) {
+        //     for (var tileColumn in this.tiles[tileRow]) {
+        //         var tileState = this.tiles[tileRow][tileColumn];
+        //         var neighbors = _getNeighbors(tileRow, tileColumn);
+        //         if (tileState == 0) {
+        //             // tile dead
+        //         } else {
 
-                }
+        //         }
 
 
-                
-            }
-        }
+
+        //     }
+        // }
 
     }
 
