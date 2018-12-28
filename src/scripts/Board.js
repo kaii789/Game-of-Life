@@ -1,3 +1,4 @@
+// constructor helper
 function generateTiles(tileSize) {
     // based off tileSize, generate the appropriate number of tiles
     var rows = Math.floor(window.innerHeight / tileSize);
@@ -27,11 +28,11 @@ export class Board {
         // for (var i = 0)
     }
 
-    // draw() {
-    //     var canvas = document.querySelector("canvas");
-    //     var brush = canvas.getContext("2d");
-    //     brush.beginPath();
-    //     brush.fillRect(100, 100, 100, 100)
-    // }
+    draw() {
+        var canvas = document.querySelector("canvas");
+        var brush = canvas.getContext("2d");
+        brush.beginPath();
+        brush.fillRect(100, 100, 100, 100)
+    }
 }
 
