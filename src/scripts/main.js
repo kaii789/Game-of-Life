@@ -13,7 +13,7 @@ animate();
 
 function animate() {
     requestAnimationFrame(animate);
-    board.updateGen();
+    board.updateGeneration();
     board.draw();
 }
 
