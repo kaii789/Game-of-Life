@@ -1,5 +1,5 @@
 // constructor helper
-function generateTiles(tileSize) {
+function _generateTiles(tileSize) {
     // based off tileSize, generate the appropriate number of tiles
     var rows = Math.floor(window.innerHeight / tileSize);
     var columns = Math.floor(window.innerHeight / tileSize);
@@ -17,7 +17,7 @@ function generateTiles(tileSize) {
 export class Board {
     constructor(tileSizePx) {
         this.tileSize = tileSizePx;
-        this.tiles = generateTiles(this.tileSize);
+        this.tiles = _generateTiles(this.tileSize);
     }
 
     updateGeneration() {
@@ -31,8 +31,18 @@ export class Board {
     draw() {
         var canvas = document.querySelector("canvas");
         var brush = canvas.getContext("2d");
-        // brush.beginPath();
-        brush.fillRect(100, 100, 100, 100)
+    
+        for (var tileRow in this.tiles) {
+            for (var tileColumn in this.tiles[tileRow]) {
+                tileState = this.tiles[tileRow][tileColumn];
+                brush.beginPath();
+                brush.fillStyle = "black";
+                brush.fillRect(tileColumn, tileRow, this.tileSize, this.tileSize);
+            }
+
+        }
+
+
     }
 }
 
