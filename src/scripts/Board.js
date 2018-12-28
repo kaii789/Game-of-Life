@@ -1,22 +1,22 @@
 export class Board {
     constructor(tileSizePx) {
         this.tileSize = tileSizePx;
-        this.tiles = _generateTiles();
+        // this.tiles = _generateTiles();
     }
 
-    _generateTiles() {
-        // based off tileSize, generate the appropriate number of tiles
-        var rows = Math.floor(window.innerHeight / this.tileSize);
-        var columns = Math.floor(window.innerHeight / this.tileSize);
-        var tiles = new Array();
-        for (var i = 0; i < rows; i++) {
-            for (var j = 0; j < columns; j++) {
-                tiles[i][j] = 0;
-            }
-        }
+    // _generateTiles() {
+    //     // based off tileSize, generate the appropriate number of tiles
+    //     var rows = Math.floor(window.innerHeight / this.tileSize);
+    //     var columns = Math.floor(window.innerHeight / this.tileSize);
+    //     var tiles = new Array();
+    //     for (var i = 0; i < rows; i++) {
+    //         for (var j = 0; j < columns; j++) {
+    //             tiles[i][j] = 0;
+    //         }
+    //     }
 
-        return tiles;
-    }
+    //     return tiles;
+    // }
 
     updateGeneration() {
         // iterate through tiles
