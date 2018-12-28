@@ -1,4 +1,4 @@
-class Board {
+export class Board {
     constructor(tileSizePx) {
         this.tileSize = tileSizePx;
         this.tiles = generateTiles();
