@@ -1,6 +1,6 @@
 // assignments
 var canvas = document.querySelector("canvas");
-var brush = canvas.getContext();
+var brush = canvas.getContext("2d");
 var board = new Board(5);
 
 // fit canvas to screen
