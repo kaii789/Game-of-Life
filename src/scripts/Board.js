@@ -55,7 +55,7 @@ export class Board {
                 var tileState = this.tiles[tileRow][tileColumn];
                 brush.beginPath();
                 if (tileState == 0) brush.fillStyle = "black"; else brush.fillStyle = "white";
-                brush.fillRect(tileColumn, tileRow, this.tileSize, this.tileSize);
+                brush.fillRect(tileColumn * this.tileSize, tileRow * this.tileSize, this.tileSize, this.tileSize);
             }
 
         }
