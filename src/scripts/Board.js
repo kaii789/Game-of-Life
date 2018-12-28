@@ -14,7 +14,7 @@ export class Board {
             for (var j = 0; j < columns; j++) {
                 row.push(0);
             }
-            tiles.push(temp);
+            tiles.push(row);
         }
 
         return tiles;
