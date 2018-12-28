@@ -1,23 +1,22 @@
+function generateTiles() {
+    // based off tileSize, generate the appropriate number of tiles
+    var rows = Math.floor(window.innerHeight / this.tileSize);
+    var columns = Math.floor(window.innerHeight / this.tileSize);
+    var tiles = new Array();
+    for (var i = 0; i < rows; i++) {
+        var row = new Array();
+        for (var j = 0; j < columns; j++) {
+            row.push(0);
+        }
+        tiles.push(row);
+    }
+
+    return tiles;
+}
 export class Board {
     constructor(tileSizePx) {
         this.tileSize = tileSizePx;
         this.tiles = generateTiles();
-    }
-
-    generateTiles() {
-        // based off tileSize, generate the appropriate number of tiles
-        var rows = Math.floor(window.innerHeight / this.tileSize);
-        var columns = Math.floor(window.innerHeight / this.tileSize);
-        var tiles = new Array();
-        // for (var i = 0; i < rows; i++) {
-        //     var row = new Array();
-        //     for (var j = 0; j < columns; j++) {
-        //         row.push(0);
-        //     }
-        //     tiles.push(row);
-        // }
-
-        return tiles;
     }
 
     updateGeneration() {
