@@ -19,8 +19,7 @@ export class Board {
     
     constructor(tileSizePx) {
         this.tileSize = tileSizePx;
-        // this.tiles = generateTiles();
-        draw();
+        this.tiles = generateTiles();
     }
 
     updateGeneration() {
