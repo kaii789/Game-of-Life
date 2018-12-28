@@ -36,4 +36,3 @@ export class Board {
     // }
 }
 
-var board = new Board(5);
