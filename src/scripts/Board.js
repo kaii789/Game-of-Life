@@ -1,4 +1,9 @@
-export class Board {
+class Board {
+    constructor(tileSizePx) {
+        this.tileSize = tileSizePx;
+        this.tiles = generateTiles();
+    }
+
     generateTiles() {
         // based off tileSize, generate the appropriate number of tiles
         var rows = Math.floor(window.innerHeight / this.tileSize);
@@ -13,13 +18,6 @@ export class Board {
         // }
 
         return tiles;
-
-        
-    }
-    
-    constructor(tileSizePx) {
-        this.tileSize = tileSizePx;
-        this.tiles = generateTiles();
     }
 
     updateGeneration() {
@@ -37,3 +35,5 @@ export class Board {
         brush.fillRect(100, 100, 100, 100)
     }
 }
+
+export default Board;
