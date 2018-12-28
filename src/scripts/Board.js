@@ -1,8 +1,6 @@
 // constructor helper
 function _generateTiles(tileSize) {
     // based off tileSize, generate the appropriate number of tiles
-    var height = window.innerHeight;
-    var width = window.innerWidth;
     var rows = Math.floor(window.innerHeight / tileSize);
     var columns = Math.floor(window.innerWidth / tileSize);
     var tiles = new Array();
