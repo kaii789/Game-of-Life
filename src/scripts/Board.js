@@ -24,9 +24,9 @@ export class Board {
 
     updateGeneration() {
         // iterate through tiles
-            // for a given tile, if alive, check num of alive neighbors >> if not 2 or 3 alive neighbors, then dead in next gen
-            // if dead, if 3 alive neighbors, alive in next gen
-        
+        // for a given tile, if alive, check num of alive neighbors >> if not 2 or 3 alive neighbors, then dead in next gen
+        // if dead, if 3 alive neighbors, alive in next gen
+
         // for (var i = 0)
     }
 
@@ -34,4 +34,3 @@ export class Board {
 
     }
 }
-
