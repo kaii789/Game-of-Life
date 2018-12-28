@@ -25,23 +25,36 @@ export class Board {
         // for a given tile, if alive, check num of alive neighbors >> if not 2 or 3 alive neighbors, then dead in next gen
         // if dead, if 3 alive neighbors, alive in next gen
 
-        // for (var i = 0)
+        for (var tileRow in this.tiles) {
+            for (var tileColumn in this.tiles[tileRow]) {
+                var tileState = this.tiles[tileRow][tileColumn];
+                var neighbors = _getNeighbors(tileRow, tileColumn);
+                if (tileState == 0) {
+                    // tile dead
+                } else {
+
+                }
+
+
+                
+            }
+        }
+
+    }
+
+    _getNeighbors(tileRow, tileColumn) {
+
     }
 
     draw() {
         var canvas = document.querySelector("canvas");
         var brush = canvas.getContext("2d");
-    
+
         for (var tileRow in this.tiles) {
             for (var tileColumn in this.tiles[tileRow]) {
                 var tileState = this.tiles[tileRow][tileColumn];
                 brush.beginPath();
-                if (tileState == 0) {
-                    brush.fillStyle = "black";
-                } else {
-                    brush.fillStyle = "white";
-                }
-                
+                if (tileState == 0) brush.fillStyle = "black"; else brush.fillStyle = "white";
                 brush.fillRect(tileColumn, tileRow, this.tileSize, this.tileSize);
             }
 
@@ -50,4 +63,3 @@ export class Board {
 
     }
 }
-
