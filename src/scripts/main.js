@@ -9,6 +9,8 @@ var board = new Board(5);
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
+animate();
+
 function animate() {
     requestAnimationFrame(animate);
     board.updateGen();
