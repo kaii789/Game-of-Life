@@ -1,9 +1,9 @@
 export class Board {
     generateTiles() {
         // based off tileSize, generate the appropriate number of tiles
-        // var rows = Math.floor(window.innerHeight / this.tileSize);
-        // var columns = Math.floor(window.innerHeight / this.tileSize);
-        // var tiles = new Array();
+        var rows = Math.floor(window.innerHeight / this.tileSize);
+        var columns = Math.floor(window.innerHeight / this.tileSize);
+        var tiles = new Array();
         // for (var i = 0; i < rows; i++) {
         //     var row = new Array();
         //     for (var j = 0; j < columns; j++) {
@@ -12,9 +12,9 @@ export class Board {
         //     tiles.push(row);
         // }
 
-        // return tiles;
+        return tiles;
 
-        return 5;
+        
     }
     
     constructor(tileSizePx) {
