@@ -4,7 +4,7 @@ export class Board {
         this.tiles = generateTiles();
     }
 
-    export generateTiles() {
+    generateTiles() {
         // based off tileSize, generate the appropriate number of tiles
         var rows = Math.floor(window.innerHeight / this.tileSize);
         var columns = Math.floor(window.innerHeight / this.tileSize);
