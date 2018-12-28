@@ -1,7 +1,7 @@
 export class Board {
     constructor(tileSizePx) {
         this.tileSize = tileSizePx;
-        this.tiles = this.generateTiles();
+        this.tiles = generateTiles();
     }
 
     generateTiles() {
@@ -10,9 +10,11 @@ export class Board {
         var columns = Math.floor(window.innerHeight / this.tileSize);
         var tiles = new Array();
         for (var i = 0; i < rows; i++) {
+            var row = new Array();
             for (var j = 0; j < columns; j++) {
-                tiles[i][j] = 0;
+                row[j] = 0;
             }
+            tiles[i] = temp;
         }
 
         return tiles;
