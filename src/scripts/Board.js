@@ -31,7 +31,7 @@ export class Board {
     draw() {
         var canvas = document.querySelector("canvas");
         var brush = canvas.getContext("2d");
-        brush.beginPath();
+        // brush.beginPath();
         brush.fillRect(100, 100, 100, 100)
     }
 }
