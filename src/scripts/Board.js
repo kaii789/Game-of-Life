@@ -1,4 +1,4 @@
-function generateTiles() {
+function generateTiles(tileSize) {
     // based off tileSize, generate the appropriate number of tiles
     var rows = Math.floor(window.innerHeight / this.tileSize);
     var columns = Math.floor(window.innerHeight / this.tileSize);
@@ -16,7 +16,7 @@ function generateTiles() {
 export class Board {
     constructor(tileSizePx) {
         this.tileSize = tileSizePx;
-        this.tiles = generateTiles();
+        this.tiles = generateTiles(this.tileSize);
     }
 
     updateGeneration() {
