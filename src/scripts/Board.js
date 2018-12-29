@@ -49,9 +49,8 @@ export class Board {
 
         if (tileColumn != this.tiles[0].length - 1) {
             // add right
-            var num2 = this.tiles[tileRow][tileColumn]; 
-            var num = this.tiles[tileRow][1];
-            neighbors.push(this.tiles[tileRow][tileColumn + 1]);
+            var wuzGoinOn = tileColumn + 1;
+            neighbors.push(this.tiles[tileRow][wuzGoinOn]);
         }
 
         if (tileRow != 0) {
