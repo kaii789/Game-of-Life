@@ -49,6 +49,7 @@ export class Board {
 
         if (tileColumn != this.tiles[0].length - 1) {
             // add right
+            var num = this.tiles[tileRow][tileColumn + 1];
             neighbors.push(this.tiles[tileRow][tileColumn + 1]);
         }
 
@@ -57,7 +58,7 @@ export class Board {
             neighbors.push(this.tiles[tileRow - 1][tileColumn]);
         }
 
-        if (!(tileRow == this.tiles.length - 1)) {
+        if (tileRow != this.tiles.length - 1) {
             // add bottom
             neighbors.push(this.tiles[tileRow + 1][tileColumn]);
         }
