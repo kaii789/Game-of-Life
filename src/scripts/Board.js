@@ -22,7 +22,7 @@ function _generateRandTiles(tileSize) {
     for (var i = 0; i < rows; i++) {
         var row = new Array();
         for (var j = 0; j < columns; j++) {
-            row.push(Math.round(Math.rand()));
+            row.push(Math.round(Math.random()));
         }
         tiles.push(row);
     }
