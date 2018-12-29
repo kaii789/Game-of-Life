@@ -37,11 +37,11 @@ export class Board {
 
     _getNeighbors(tileRow, tileColumn) {
         var neighbors = new Array();
-        this._addAdjacent(tileRow, tileColumn);
-        this._addDiagonals(tileRow, tileColumn);
+        this._addAdjacent(tileRow, tileColumn, neighbors);
+        this._addDiagonals(tileRow, tileColumn, neighbors);
     }
 
-    _addAdjacent(tileRow, tileColumn) {
+    _addAdjacent(tileRow, tileColumn, neighbors) {
         if (tileColumn != 0) {
             // add left
             neighbors.push(this.tiles[tileRow][tileColumn - 1]);
@@ -63,7 +63,7 @@ export class Board {
         }
     }
 
-    _addDiagonals(tileRow, tileColumn) {
+    _addDiagonals(tileRow, tileColumn, neighbors) {
         if (tileColumn != 0 && tileRow != 0) {
             neighbors.push(this.tiles[tileRow - 1][tileColumn - 1]);
         }
