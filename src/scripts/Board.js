@@ -39,6 +39,8 @@ export class Board {
         var neighbors = new Array();
         this._addAdjacent(tileRow, tileColumn, neighbors);
         this._addDiagonals(tileRow, tileColumn, neighbors);
+
+        return neighbors;
     }
 
     _addAdjacent(tileRow, tileColumn, neighbors) {
