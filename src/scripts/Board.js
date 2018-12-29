@@ -25,8 +25,8 @@ export class Board {
         // for a given tile, if alive, check num of alive neighbors >> if not 2 or 3 alive neighbors, then dead in next gen
         // if dead, if 3 alive neighbors, alive in next gen
 
-        for (var tileRow in this.tiles) {
-            for (var tileColumn in this.tiles[tileRow]) {
+        for (tileRow in this.tiles) {
+            for (tileColumn in this.tiles[tileRow]) {
                 var tileState = this.tiles[tileRow][tileColumn];
                 var neighbors = this._getNeighbors(tileRow, tileColumn);
                 if (tileState == 0) this._handleDeadState(tileRow, tileColumn, neighbors);
