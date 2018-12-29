@@ -96,7 +96,7 @@ export class Board {
     }
 
     checkLiveNeighbors(numToCheck, neighbors) {
-        numLiveNeighbors = 0;
+        var numLiveNeighbors = 0;
 
         for (var i in neighbors) {
             var neighbor = neighbors[i];
