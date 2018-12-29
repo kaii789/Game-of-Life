@@ -37,8 +37,8 @@ export class Board {
 
     _getNeighbors(tileRow, tileColumn) {
         var neighbors = new Array();
-        _addAdjacent(tileRow, tileColumn);
-        _addDiagonals(tileRow, tileColumn);
+        this._addAdjacent(tileRow, tileColumn);
+        this._addDiagonals(tileRow, tileColumn);
     }
 
     _addAdjacent(tileRow, tileColumn) {
@@ -83,14 +83,25 @@ export class Board {
 
 
     _handleDeadState(tileRow, tileColumn, neighbors) {
-        if (checkLiveNeighbors(3, neighbors)) this.tiles[tileRow][tileColumn] = 1;
+        if (this.checkLiveNeighbors(3, neighbors)) this.tiles[tileRow][tileColumn] = 1;
     }
 
     _handleAliveState(tileRow, tileColumn, neighbors) {
-        var twoNeighborsAlive = checkLiveNeighbors(2, neighbors);
-        var threeNeighborsAlive = checkLiveNeighbors(3, neighbors);
+        var twoNeighborsAlive = this.checkLiveNeighbors(2, neighbors);
+        var threeNeighborsAlive = this.checkLiveNeighbors(3, neighbors);
         if (!twoNeighborsAlive && !threeNeighborsAlive) this.tiles[tileRow][tileColumn] = 0;
     }
+
+    checkLiveNeighbors(numToCheck, neighbors) {
+        numLiveNeighbors = 0;
+
+        for (var i in neighbors) {
+            var neighbor = neighbors[i];
+            if (neighbor == 1) numLiveNeighbors++;
+        }
+
+        return numLiveNeighbors == numToCheck;
+    } 
 
     draw() {
         var canvas = document.querySelector("canvas");
