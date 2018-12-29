@@ -17,7 +17,7 @@ function _generateTiles(tileSize) {
 export class Board {
     constructor(tileSizePx) {
         this.tileSize = tileSizePx;
-        this.tiles = this._generateTiles(this.tileSize);
+        this.tiles = _generateTiles(this.tileSize);
     }
 
     updateGeneration() {
