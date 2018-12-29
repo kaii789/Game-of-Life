@@ -15,18 +15,14 @@ function _generateTiles(tileSize) {
     return tiles;
 }
 
-function _generateTestTiles(tileSize) {
+function _generateRandTiles(tileSize) {
     var rows = Math.floor(window.innerHeight / tileSize);
     var columns = Math.floor(window.innerWidth / tileSize);
     var tiles = new Array();
     for (var i = 0; i < rows; i++) {
         var row = new Array();
         for (var j = 0; j < columns; j++) {
-            if (j % 2 == 0) {
-                row.push(0);
-            } else {
-                row.push(1);
-            }
+            row.push(Math.round(Math.rand()));
         }
         tiles.push(row);
     }
