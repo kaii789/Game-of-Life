@@ -17,7 +17,7 @@ function _generateTiles(tileSize) {
 export class Board {
     constructor(tileSizePx) {
         this.tileSize = tileSizePx;
-        this.tiles = _generateTiles(this.tileSize);
+        this.tiles = this._generateTiles(this.tileSize);
     }
 
     updateGeneration() {
@@ -28,9 +28,9 @@ export class Board {
         for (var tileRow in this.tiles) {
             for (var tileColumn in this.tiles[tileRow]) {
                 var tileState = this.tiles[tileRow][tileColumn];
-                var neighbors = _getNeighbors(tileRow, tileColumn);
-                if (tileState == 0) _handleDeadState(tileRow, tileColumn, neighbors);
-                else _handleAliveState(tileRow, tileColumn, neighbors);
+                var neighbors = this._getNeighbors(tileRow, tileColumn);
+                if (tileState == 0) this._handleDeadState(tileRow, tileColumn, neighbors);
+                else this._handleAliveState(tileRow, tileColumn, neighbors);
             }
         }
     }
