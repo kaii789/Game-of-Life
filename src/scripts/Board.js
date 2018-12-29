@@ -33,7 +33,7 @@ function _generateRandTiles(tileSize) {
 export class Board {
     constructor(tileSizePx) {
         this.tileSize = tileSizePx;
-        this.tiles = _generateTestTiles(this.tileSize);
+        this.tiles = _generateRandTiles(this.tileSize);
     }
 
     updateGeneration() {
