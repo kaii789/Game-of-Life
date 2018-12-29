@@ -25,25 +25,71 @@ export class Board {
         // for a given tile, if alive, check num of alive neighbors >> if not 2 or 3 alive neighbors, then dead in next gen
         // if dead, if 3 alive neighbors, alive in next gen
 
-        // for (var tileRow in this.tiles) {
-        //     for (var tileColumn in this.tiles[tileRow]) {
-        //         var tileState = this.tiles[tileRow][tileColumn];
-        //         var neighbors = _getNeighbors(tileRow, tileColumn);
-        //         if (tileState == 0) {
-        //             // tile dead
-        //         } else {
-
-        //         }
-
-
-
-        //     }
-        // }
-
+        for (var tileRow in this.tiles) {
+            for (var tileColumn in this.tiles[tileRow]) {
+                var tileState = this.tiles[tileRow][tileColumn];
+                var neighbors = _getNeighbors(tileRow, tileColumn);
+                if (tileState == 0) _handleDeadState(tileRow, tileColumn, neighbors);
+                else _handleAliveState(tileRow, tileColumn, neighbors);
+            }
+        }
     }
 
     _getNeighbors(tileRow, tileColumn) {
+        var neighbors = new Array();
+        _addAdjacent(tileRow, tileColumn);
+        _addDiagonals(tileRow, tileColumn);
+    }
 
+    _addAdjacent(tileRow, tileColumn) {
+        if (tileColumn != 0) {
+            // add left
+            neighbors.push(this.tiles[tileRow][tileColumn - 1]);
+        }
+
+        if (tileColumn != this.tiles[0].length - 1) {
+            // add right
+            neighbors.push(this.tiles[tileRow][tileColumn + 1]);
+        }
+
+        if (tileRow != 0) {
+            // add top
+            neighbors.push(this.tiles[tileRow - 1][tileColumn]);
+        }
+
+        if (!(tileRow == this.tiles.length - 1)) {
+            // add bottom
+            neighbors.push(this.tiles[tileRow + 1][tileColumn]);
+        }
+    }
+
+    _addDiagonals(tileRow, tileColumn) {
+        if (tileColumn != 0 && tileRow != 0) {
+            neighbors.push(this.tiles[tileRow - 1][tileColumn - 1]);
+        }
+
+        if (tileColumn != 0 && tileRow != this.tiles.length - 1) {
+            neighbors.push(this.tiles[tileRow + 1][tileColumn - 1]);
+        }
+
+        if (tileColumn != this.tiles[0].length - 1 && tileRow != this.tiles.length - 1) {
+            neighbors.push(this.tiles[tileRow + 1][tileColumn + 1]);
+        }
+
+        if (tileColumn != this.tiles[0].length - 1 && tileRow != 0) {
+            neighbors.push(this.tiles[tileRow - 1][tileColumn + 1]);
+        }
+    }
+
+
+    _handleDeadState(tileRow, tileColumn, neighbors) {
+        if (checkLiveNeighbors(3, neighbors)) this.tiles[tileRow][tileColumn] = 1;
+    }
+
+    _handleAliveState(tileRow, tileColumn, neighbors) {
+        var twoNeighborsAlive = checkLiveNeighbors(2, neighbors);
+        var threeNeighborsAlive = checkLiveNeighbors(3, neighbors);
+        if (!twoNeighborsAlive && !threeNeighborsAlive) this.tiles[tileRow][tileColumn] = 0;
     }
 
     draw() {
@@ -54,12 +100,19 @@ export class Board {
             for (var tileColumn in this.tiles[tileRow]) {
                 var tileState = this.tiles[tileRow][tileColumn];
                 brush.beginPath();
-                if (tileState == 0) brush.fillStyle = "black"; else brush.fillStyle = "white";
+                if (tileState == 0) brush.fillStyle = "black";
+                else brush.fillStyle = "white";
                 brush.fillRect(tileColumn * this.tileSize, tileRow * this.tileSize, this.tileSize, this.tileSize);
             }
-
         }
-
-
     }
+
+
+
 }
+
+
+/*
+TODO
+-need to handle resizing
+*/
