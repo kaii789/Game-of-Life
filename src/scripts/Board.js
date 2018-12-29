@@ -14,10 +14,30 @@ function _generateTiles(tileSize) {
 
     return tiles;
 }
+
+function _generateTestTiles(tileSize) {
+    var rows = Math.floor(window.innerHeight / tileSize);
+    var columns = Math.floor(window.innerWidth / tileSize);
+    var tiles = new Array();
+    for (var i = 0; i < rows; i++) {
+        var row = new Array();
+        for (var j = 0; j < columns; j++) {
+            if (j % 2 == 0) {
+                row.push(0);
+            } else {
+                row.push(1);
+            }
+        }
+        tiles.push(row);
+    }
+
+    return tiles;
+}
+
 export class Board {
     constructor(tileSizePx) {
         this.tileSize = tileSizePx;
-        this.tiles = _generateTiles(this.tileSize);
+        this.tiles = _generateTestTiles(this.tileSize);
     }
 
     updateGeneration() {
