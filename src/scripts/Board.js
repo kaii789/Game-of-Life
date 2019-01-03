@@ -36,6 +36,12 @@ export class Board {
         this.tiles = _generateRandTiles(this.tileSize);
     }
 
+    setTileToAlive(x, y, board) {
+        var row = Math.floor(x / board.tileSize);
+        var column = Math.floor(y / board.tileSize);
+        board.set
+    }
+
     updateGeneration() {
         // iterate through tiles
         // for a given tile, if alive, check num of alive neighbors >> if not 2 or 3 alive neighbors, then dead in next gen
